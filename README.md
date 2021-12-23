@@ -7,6 +7,9 @@ A Large Nano-Quadcopter Swarm.
 
 The documentation is available here: http://crazyswarm.readthedocs.io/en/latest/.
 
+## Zhengtian's notes: 
+Personal notes is available here: https://github.com/mamariomiamo/crazyswarm/blob/master/notes/zhengtian_notes.md
+
 ## Troubleshooting
 Please start a [Discussion](https://github.com/USC-ACTLab/crazyswarm/discussions) for...
 
