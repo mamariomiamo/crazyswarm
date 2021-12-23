@@ -2,9 +2,11 @@ cmake_minimum_required(VERSION 2.8.3)
 project(crazyswarm)
 
 
-option(BUILD_PYTHON_BINDINGS "Generate Python Bindings" OFF)
-option(BUILD_EXAMPLE "Enable Example application" OFF)
-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/externalDependencies/libmotioncapture)
+# On 64-bit Linux we can enable optitrack_closed_source
+if(CMAKE_HOST_SYSTEM_PROCESSOR STREQUAL x86_64 OR CMAKE_HOST_SYSTEM_PROCESSOR STREQUAL amd64)
+  option(LIBMOTIONCAPTURE_ENABLE_OPTITRACK_CLOSED_SOURCE "Enable optitrack closed source" ON)
+endif()
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/externalDependencies/libmotioncapture EXCLUDE_FROM_ALL)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
