@@ -1,6 +1,9 @@
 ros_ws/build/
 ros_ws/devel/
 ros_ws/src/CMakeLists.txt
+ros_ws/src/.vscode
+ros_ws/src/crazyflie-firmware
+ros_ws/.catkin_tools
 .DS_Store
 *.pyc
 *~
