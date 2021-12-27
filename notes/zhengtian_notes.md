@@ -49,7 +49,26 @@ python version: 2.7
 conda create -n crazyswarm python=2
 conda activate crazyswarm
 
-##### crazyswarm installation
+### crazyswarm installation
 Follow instruction [here](https://crazyswarm.readthedocs.io/en/latest/installation.html) under **Physical Robots and Simulation**: 
 Before Step 6, make sure you are using most updated **cmake** version as **3.10.2** will produce error.
 Follow the answer with most up-votes [here](https://answers.ros.org/question/293119/how-can-i-updateremove-cmake-without-partially-deleting-my-ros-distribution/) to see a clean way of using updated cmake.
+
+### crazyswarm setup
+Follow instruction [here](https://crazyswarm.readthedocs.io/en/latest/configuration.html) to configure.
+Things to note:
+- Configure the crazyflie's identifier/address 0xE7E7E7E7<X> with the cfclient
+- Update all crazyflies to the newest firmware
+  
+Files to change:
+- `hover_swarm.launch`
+   - **controller**: 1 i.e. PID
+   - **motion_capture_type**: change to the appropriate one
+   - **motion_capture_host_name**: change to the IP of the desktop running tracker/motive
+- `crazyflieTypes.yaml`
+  - **markerConfiguration**: change to 3 if using single marker configuration
+- `crazyflies.yaml`
+  - configure the correct **id**, **channel**, **initial position** (only needed if using single marker)
+
+#### Note
+If using `chooser.py`, contents in `crazyflies.yaml` wll be overwritten
