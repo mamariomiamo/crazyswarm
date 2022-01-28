@@ -46,7 +46,9 @@ cfx: 0xE7E7E7E70x
 
 ## Crazyswarm-related
 python version: 2.7
-conda create -n crazyswarm python=2
+
+conda create -n crazyswarm python=2.7
+
 conda activate crazyswarm
 
 ### crazyswarm installation
